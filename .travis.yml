@@ -15,7 +15,7 @@ install:
     - make
 
     # Compile the examples
-    - cd CANVASPP_EXAMPLE_DIR
+    - cd $CANVASPP_EXAMPLE_DIR
     - make
 
 notifications:
