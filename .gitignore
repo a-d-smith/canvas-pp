@@ -2,3 +2,5 @@
 *.so
 *.d
 example/bin/
+setup.sh
+

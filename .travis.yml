@@ -1,0 +1,24 @@
+language: cpp
+
+env:
+    matrix:
+        - COMPILER=g++
+
+before_install:
+    # Set up the environment
+    - export CANVASPP_DIR=`pwd`
+    - export CANVASPP_EXAMPLE_DIR=$CANVASPP_DIR/example/
+    - export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CANVASPP_DIR
+
+install:
+    # Compile the library
+    - make
+
+    # Compile the examples
+    - cd CANVASPP_EXAMPLE_DIR
+    - make
+
+notifications:
+    email:
+        on_success: never
+        on_failure: always
