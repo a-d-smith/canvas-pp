@@ -10,7 +10,7 @@ before_install:
     - export CANVASPP_EXAMPLE_DIR=$CANVASPP_DIR/example/
     - export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CANVASPP_DIR
 
-install:
+script:
     # Compile the library
     - make
 
