@@ -19,7 +19,7 @@ INCLUDE_DIR=$(CANVASPP_DIR)/inc/
 SOURCE_DIR=$(CANVASPP_DIR)/src/
 
 # Set up the sources and objects
-INCLUDES = -I$(INCLUDE_DIR)
+INCLUDES  = -I$(INCLUDE_DIR)
 SOURCES = $(wildcard $(SOURCE_DIR)/*.cc)
 
 OBJECTS = $(SOURCES:.cc=.o)
@@ -39,6 +39,8 @@ clean:
 $(LIBRARY): $(OBJECTS)
 	$(CC) -shared -o $(LIBRARY) $(OBJECTS)
 
-*.o: *.cc
-	$(CC) $(CFLAGS) $<
+-include: $(DEPENDS)
+
+%.o: %.cc
+	$(CC) $(CFLAGS) $(INCLUDES) $(DEFINES) -MP -MMD -MT $*.o -MT $*.d -MF $*.d -o $*.o $*.cc
 
