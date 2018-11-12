@@ -1,6 +1,8 @@
 # canvas-pp
 canvas++ is a dependency free library for developing HTML canvas applications in C++
 
+[![Build Status](https://travis-ci.org/a-d-smith/canvas-pp.svg?branch=master)](https://travis-ci.org/a-d-smith/canvas-pp)
+
 ## Getting started
 
 ### Compiling the library
